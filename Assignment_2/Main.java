@@ -2,30 +2,44 @@ import java.util.Iterator;
 
 public class Main {
     public static void main(String[] args) {
-        MyStack<String> stack = new MyStack<>();
+        MyQueue<Integer> queue = new MyQueue<>();
 
-        stack.push("A");
-        stack.push("B");
-        stack.push("C");
+        queue.enterQueue(10);
+        queue.enterQueue(20);
+        queue.enterQueue(30);
+        queue.enterQueue(40);
+        // printQueue(queue);
 
-        // System.out.println(stack.peek()); 
+        // System.out.println(queue.peek());
 
-        // System.out.println(stack.pop()); 
+        // System.out.println(queue.deleteQueue());
+        // printQueue(queue);
 
+        // System.out.println(queue.size());
 
-
-        // System.out.println(stack.pop()); 
-
-
-        // System.out.println(stack.isEmpty()); 
-
-
-        // System.out.println(stack.pop()); 
-
-        System.out.println(stack.isEmpty()); 
-
-        
+        System.out.println(queue.isEmpty());
     }
+
+
+
+    // helper to print queue
+    public static void printQueue(MyQueue<Integer> queue) {
+        MyQueue<Integer> temp = new MyQueue<>();
+
+        while (!queue.isEmpty()) {
+            int val = queue.deleteQueue(); 
+            System.out.print(val + " ");
+            temp.enterQueue(val); 
+        }
+
+        System.out.println();
+
+        while (!temp.isEmpty()) {
+            queue.enterQueue(temp.deleteQueue()); 
+        }
+    }
+        
+        
 
 
 
