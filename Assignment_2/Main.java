@@ -2,22 +2,29 @@ import java.util.Iterator;
 
 public class Main {
     public static void main(String[] args) {
-        MyQueue<Integer> queue = new MyQueue<>();
+        MyMinHeap<Integer> minHeap = new MyMinHeap<>();
 
-        queue.enterQueue(10);
-        queue.enterQueue(20);
-        queue.enterQueue(30);
-        queue.enterQueue(40);
-        // printQueue(queue);
+        minHeap.insert(10);
+        minHeap.insert(20);
+        minHeap.insert(5);
+        minHeap.insert(15);
+        minHeap.insert(30);
 
-        // System.out.println(queue.peek());
+        // System.out.println(minHeap.getMin()); 
 
-        // System.out.println(queue.deleteQueue());
-        // printQueue(queue);
+        
+        // System.out.println(minHeap.extractMin());
+        
+        
+        // System.out.println(minHeap.getMin()); 
 
-        // System.out.println(queue.size());
+        // System.out.println(minHeap.size());
 
-        System.out.println(queue.isEmpty());
+        // while (!minHeap.isEmpty()) {
+        //     System.out.println(minHeap.extractMin());
+        // }
+
+        System.out.println(minHeap.isEmpty());
     }
 
 
